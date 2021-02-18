@@ -2,22 +2,29 @@ package org.legendtitans.whackaworm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView imageViewPlay = (ImageView) findViewById(R.id.playImageView);
+        ImageView imageViewPlay = (ImageView) findViewById(R.id.playButtonImageView);
         imageViewPlay.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 // TODO Auto-generated method stub
-                Log.i("imageviewandontouchlistener", "playImageView onTouch");
+                Toast.makeText(getApplicationContext(),"I have been graciously touched by the honorable hand of god", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
